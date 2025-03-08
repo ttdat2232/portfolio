@@ -20,7 +20,8 @@ class Translator {
         if (lang) {
             this._lang = lang;
         }
-        fetch(`../i18n/${this._lang}.json`)
+        let url = `https://raw.githubusercontent.com/ttdat2232/portfolio/refs/heads/main/i18n/${this._lang}.json`;
+        fetch(url)
             .then((res) => res.json())
             .then((translation) => {
                 this._elements.forEach((element) => {
