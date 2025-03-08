@@ -52,3 +52,12 @@ class Translator {
 
 const translator = new Translator();
 translator.load("en");
+
+function closeNavbar() {
+    const navbar = document.querySelector(".dropdown");
+    navbar.style.transform = "translateY(-100vh)";
+}
+function showNavbar() {
+    const navbar = document.querySelector(".dropdown");
+    navbar.style.transform = "translateY(0px)";
+}
