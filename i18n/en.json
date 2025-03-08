@@ -1,0 +1,23 @@
+{
+    "greeting": {
+        "name": "Hi, my name is <span>Truong Tien Dat</span>",
+        "job": "I'm a <span>Software Developer</span>"
+    },
+    "information": "I am a software developer with almost 2 years experiences",
+    "header": {
+        "title": "Truong Tien Dat Portfolio"
+    },
+    "nav": {
+        "link": {
+            "home": "Home",
+            "about": "About",
+            "skills": "Skills",
+            "contact": "Contact"
+        }
+    },
+    "btn": {
+        "download": {
+            "cv": "Download CV"
+        }
+    }
+}

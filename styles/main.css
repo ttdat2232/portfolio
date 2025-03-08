@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+--global-item-size: 2rem;
+--default-color: rgb(0, 162, 237);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    text-decoration: none;
+}
+
+html {
+    overflow: hidden;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(to right, rgb(255, 255, 255), rgb(14, 107, 184) ) ;
+    background: -webkit-linear-gradien(to right, rgb(255, 255, 255), rgb(14, 107, 184) ) ;
+}
+
+nav {
+    width: 100%;
+    height: 10vh;
+    position: sticky;
+    position: -webkit-sticky;
+}
+
+.nav-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-container .links a {
+    position: relative;
+    font-size: 1.2rem;
+    color: black;
+    font-weight: 500;
+    transform: 0.3s linear;
+}
+
+.nav-container .links a::before {
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--default-color);
+    transition: 0.2s linear;
+}
+.nav-container .links a:hover::before {
+    width: 100%;
+}
+
+.nav-container .btn-contact {
+    background-color: transparent;
+    padding: 5px 20px;
+    border-radius: 20px;
+    border: 2px solid var(--default-color);
+    transition: 0.2s linear;
+}
+
+.nav-container .btn-contact a{
+    color: white;
+    transition: 0.3s linear;
+}
+
+.nav-container .btn-contact:hover, .nav-container .btn-contact:hover a{
+    background-color: var(--default-color);
+    color: white
+}
+
+.nav-container .links a:hover {
+    color: white
+}
+
+.logo {
+    color: black;
+    font-size: var(--global-item-size);
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--default-color);
+    text-shadow: 0 0 10px rgb(0, 200, 250);
+}
+
+.hamburg, .cancel {
+    cursor: pointer;
+    position: relative;
+    right: 15px;
+    top: 10px;
+    color: black;
+    font-size: var(--global-item-size);
+    display: none;
+}
+
+.nav-container .links {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.dropdown {
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    transform: translateY(-500px);
+    width: 100%;
+    height: auto;
+    backdrop-filter: brightness(40%) blur(3px);
+    box-shadow: 0 0 20px black;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a{
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    align-items: center;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a:hover {
+    background-color: var(--default-color);
+}
+
+section {
+    width: 100%;
+    height: 90vh;
+}
+
+.main-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.main-container .image {
+    z-index: -1;
+    width: 50%;
+}
+
+.main-container .image image {
+    width: 100%;
+}
+
+.main-container .content {
+    color: black;
+    width: 40%;
+    min-height: 100px;
+}
+
+.main-container .content h1 {
+    font-size: clamp(1rem, 1.5rem + 1vw, 3rem);
+}
+.main-container .content h1 span {
+    color: var(--default-color);
+    text-shadow: 0 0 10px rgb(8, 0, 255);
+}
+.main-container .content .typewriter{
+    font-weight: 600;
+    font-size: clamp(1rem, 1rem + 1vw, 3rem);
+}
