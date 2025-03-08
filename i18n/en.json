@@ -9,15 +9,26 @@
     },
     "nav": {
         "link": {
-            "home": "Home",
             "about": "About",
             "skills": "Skills",
+            "experiences": "Experiences",
+            "projects": "Projects",
             "contact": "Contact"
         }
     },
     "btn": {
         "download": {
             "cv": "Download CV"
+        }
+    },
+    "exp": {
+        "idb": {
+            "title": ".NET Developer",
+            "information": "<ul><li>Developed and maintained Autocall applications using ASP.NET Core and Asterisk.</li><li>Implemented business logic, data access layers.</li><li>Collaborated with QA team to ensure code quality.</li><li>Participated in Agile development process.</li></ul>"
+        },
+        "squareOne": {
+            "title": ".NET Developer",
+            "information": "<ul><li>Developed and maintained scalable web applications using ASP.NET Core, focusing on admin dashboards and user interfaces.</li><li>Implemented RabbitMQ for efficient message queuing and Redis for caching frequently accessed data to enhance performance.</li><li>Collaborated with the QA team to ensure high code quality and participated in the Agile development process to deliver accurate software solutions.</li><li>Acted as a proactive team member, fostering collaboration between developers and testers to meet project deadlines and maintain high-quality standards.</li></ul>"
         }
     }
 }

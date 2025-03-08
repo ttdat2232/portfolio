@@ -14,6 +14,14 @@
         rgb(255, 255, 255),
         rgb(14, 107, 184)
     );
+    --default-top-bottom-linear-gradient: linear-gradient(
+        rgb(14, 107, 184),
+        rgb(255, 255, 255)
+    );
+    --default-webkit-top-bottom-linear-gradient: linear-gradient(
+        rgb(14, 107, 184),
+        rgb(255, 255, 255)
+    );
     --default-transiontion: 0.2s linear;
 }
 
@@ -28,12 +36,12 @@
 }
 
 html {
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 body {
     width: 100%;
-    height: 100vh;
     overflow: hidden;
     background: var(--default-linear-gradient);
     background: var(--defaul-webkit-linear-gradient);
@@ -43,7 +51,6 @@ nav {
     width: 100%;
     height: 10vh;
     position: sticky;
-    position: -webkit-sticky;
 }
 
 .nav-container {
@@ -154,6 +161,9 @@ nav {
 
 section {
     width: 100%;
+}
+
+section.about {
     height: 90vh;
 }
 
@@ -170,8 +180,11 @@ section {
     width: 50%;
 }
 
-.main-container .image image {
-    width: 100%;
+.main-container .image img {
+    width: 25vw;
+    height: 25vw;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .main-container .content {
@@ -250,10 +263,89 @@ section {
     background-color: transparent;
     box-shadow: 0 0 20px var(--secondary-color);
 }
+section.experiences {
+    padding: 8rem 12%;
+    width: 100%;
+}
 
+.section-title {
+    text-align: center;
+    font-size: var(--global-item-size);
+    font-weight: 600;
+    margin-bottom: var(--global-item-size);
+}
+
+.experiences-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--global-item-size);
+}
+.experiences img {
+    width: 24vw;
+    height: 24vw;
+    object-fit: cover;
+    border-radius: var(--global-item-size);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--global-item-size);
+}
+
+.grid-card {
+    border: 2px solid var(--secondary-color);
+    border-radius: var(--global-item-size);
+    padding: var(--global-item-size);
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    cursor: pointer;
+    justify-content: left;
+    transition: var(--default-transiontion);
+}
+
+.grid-card i {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.grid-card span {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+    text-shadow: 0 0 10px var(--secondary-color);
+}
+
+.grid-card:hover {
+    transform: scale(1.02);
+    background-color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    color: #fff;
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--default-top-bottom-linear-gradient);
+}
+@media (max-width: 1280px) {
+    .experiences-info {
+        flex-direction: column;
+    }
+}
 @media (max-width: 884px) {
     body {
         overflow-y: visible;
+        background: var(--default-top-bottom-linear-gradient);
+        background: var(--default-webkit-top-bottom-linear-gradient);
     }
 
     nav .logo {
@@ -293,5 +385,16 @@ section {
     .main-container .image {
         width: 80%;
         margin-bottom: 0px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .experiences-info {
+        flex-direction: column;
+    }
+    .experiences-info img {
+        width: 75vw;
+        height: 75vw;
     }
 }
