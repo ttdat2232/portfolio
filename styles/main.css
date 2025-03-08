@@ -69,7 +69,7 @@ nav {
     left: 0;
     width: 0;
     height: 3px;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     transition: var(--default-transiontion);
 }
 .nav-container .links a:hover::before {
@@ -113,7 +113,7 @@ nav {
 .hamburg,
 .cancel {
     cursor: pointer;
-    position: relative;
+    position: absolute;
     right: 15px;
     top: 10px;
     color: black;
@@ -232,7 +232,7 @@ section {
     cursor: pointer;
     width: 40%;
     height: 6vh;
-    margin: 30px;
+    margin-top: 30px;
     background-color: var(--secondary-color);
     color: white;
     border: none;
@@ -279,6 +279,10 @@ section {
 
     .main-container .content {
         width: 80%;
+    }
+
+    .cancel {
+        color: white;
     }
 
     .social-links i {

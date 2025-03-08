@@ -1,0 +1,23 @@
+{
+    "greeting": {
+        "name": "Xin chào, tôi là <span>Trương Tiến Đạt</span>",
+        "job": "Tôi là một <span>Lập trình viên Phần mềm</span>",
+        "information": "Lập trình viên .NET với gần 2 năm kinh nghiệm trong việc xây dựng các ứng dụng web có khả năng mở rộng. Thành thạo C#, ASP.NET, Postgresql, MySQL. Có kỹ năng giải quyết vấn đề tốt và đam mê viết mã sạch cũng như học hỏi không ngừng."
+    },
+    "header": {
+        "title": "Portfolio của Trương Tiến Đạt"
+    },
+    "nav": {
+        "link": {
+            "home": "Trang chủ",
+            "about": "Giới thiệu",
+            "skills": "Kỹ năng",
+            "contact": "Liên hệ"
+        }
+    },
+    "btn": {
+        "download": {
+            "cv": "Tải CV"
+        }
+    }
+}
