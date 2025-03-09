@@ -6,7 +6,8 @@
     --default-gap: 3rem;
     --global-item-size: 2rem;
     --primary-color: rgb(0, 162, 237);
-    --secondary-color: rgb(0, 100, 255);
+    --secondary-color: rgb(59, 137, 255);
+    --shawdow-secondary-color: rgb(0, 102, 255);
     --default-linear-gradient: linear-gradient(rgb(5, 0, 96), rgb(0, 0, 0) 15%);
     --defaul-webkit-linear-gradient: linear-gradient(
         rgb(5, 0, 96),
@@ -58,7 +59,7 @@ nav {
     font-size: 1.2rem;
     color: var(--default-color);
     font-weight: 500;
-    transform: 0.3s linear;
+    transform: var(--default-transiontion);
 }
 
 .nav-container .links a::before {
@@ -85,17 +86,16 @@ nav {
 
 .nav-container .btn-contact a {
     color: var(--default-color);
-    transition: 0.2s linear;
+    transition: var(--default-transiontion);
 }
 
-.nav-container .btn-contact:hover,
-.nav-container .btn-contact:hover a {
+.nav-container .btn-contact:hover {
     background-color: var(--primary-color);
     color: var(--default-color);
 }
 
 .nav-container .links a:hover {
-    color: var(--default-color);
+    color: var(--primary-color);
 }
 
 .hamburg,
@@ -104,7 +104,7 @@ nav {
     position: absolute;
     right: 15px;
     top: 10px;
-    color: black;
+    color: rgb(255, 255, 255);
     font-size: var(--global-item-size);
     display: none;
 }
@@ -182,7 +182,7 @@ section.about {
 .about .content h1 span {
     display: inline-block;
     color: var(--secondary-color);
-    text-shadow: 0 0 10px var(--secondary-color);
+    text-shadow: 0 0 10px var(--shawdow-secondary-color);
 }
 .about .content .typewriter {
     font-weight: 600;
@@ -437,6 +437,10 @@ section.experiences {
     .about .image {
         width: 80%;
         margin-bottom: 0px;
+    }
+
+    .flex {
+        padding: 0;
     }
 
     .flex-card {
