@@ -54,11 +54,31 @@ class Translator {
 const translator = new Translator();
 translator.load("en");
 
+let isNavOpen = false;
+
 function closeNavbar() {
-    const navbar = document.querySelector(".dropdown");
-    navbar.style.transform = "translateY(-100vh)";
+    if (isNavOpen) {
+        const navbar = document.querySelector(".dropdown");
+        navbar.style.transform = "translateY(-100vh)";
+    }
+    isNavOpen = false;
 }
 function showNavbar() {
-    const navbar = document.querySelector(".dropdown");
-    navbar.style.transform = "translateY(0px)";
+    if (!isNavOpen) {
+        const navbar = document.querySelector(".dropdown");
+        navbar.style.transform = "translateY(0px)";
+    }
+    isNavOpen = true;
 }
+
+let navLinkContainerElements = document.querySelectorAll("div.links");
+
+Array.from(navLinkContainerElements).forEach((element) => {
+    element.addEventListener(
+        "click",
+        () => {
+            closeNavbar();
+        },
+        false
+    );
+});

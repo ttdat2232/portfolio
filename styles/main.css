@@ -1,18 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
+    --default-gap: 3rem;
     --global-item-size: 2rem;
     --primary-color: rgb(0, 162, 237);
     --secondary-color: rgb(0, 100, 255);
     --default-linear-gradient: linear-gradient(
-        to right,
-        rgb(255, 255, 255),
-        rgb(12, 82, 139)
+        rgb(12, 82, 139),
+        rgb(255, 255, 255)
     );
     --defaul-webkit-linear-gradient: linear-gradient(
-        to right,
-        rgb(255, 255, 255),
-        rgb(14, 107, 184)
+        rgb(14, 107, 184),
+        rgb(255, 255, 255)
     );
     --default-top-bottom-linear-gradient: linear-gradient(
         rgb(14, 107, 184),
@@ -106,17 +105,6 @@ nav {
     color: white;
 }
 
-.logo {
-    color: black;
-    font-size: var(--global-item-size);
-    font-weight: bold;
-}
-
-.logo span {
-    color: var(--primary-color);
-    text-shadow: 0 0 10px rgb(0, 200, 250);
-}
-
 .hamburg,
 .cancel {
     cursor: pointer;
@@ -130,7 +118,7 @@ nav {
 
 .nav-container .links {
     display: flex;
-    gap: 3rem;
+    gap: var(--default-gap);
     align-items: center;
 }
 
@@ -178,11 +166,13 @@ section.about {
 .main-container .image {
     z-index: -1;
     width: 50%;
+    display: flex;
+    justify-content: center;
 }
 
 .main-container .image img {
-    width: 25vw;
-    height: 25vw;
+    width: 30vw;
+    height: 30vw;
     object-fit: cover;
     border-radius: 50%;
 }
@@ -264,7 +254,7 @@ section.about {
     box-shadow: 0 0 20px var(--secondary-color);
 }
 section.experiences {
-    padding: 8rem 12%;
+    padding: 6rem 12%;
     width: 100%;
 }
 
@@ -279,7 +269,7 @@ section.experiences {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--global-item-size);
+    gap: var(--default-gap);
 }
 .experiences img {
     width: 24vw;
@@ -288,13 +278,17 @@ section.experiences {
     border-radius: var(--global-item-size);
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--global-item-size);
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    padding: var(--global-item-size);
+    gap: var(--default-gap);
 }
 
-.grid-card {
+.flex-card {
+    flex: 1 1 calc(50% - var(--default-gap));
+    max-width: calc(50% - var(--default-gap));
     border: 2px solid var(--secondary-color);
     border-radius: var(--global-item-size);
     padding: var(--global-item-size);
@@ -304,27 +298,38 @@ section.experiences {
     cursor: pointer;
     justify-content: left;
     transition: var(--default-transiontion);
+    margin: auto;
 }
 
-.grid-card i {
+.flex-card i {
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
-.grid-card span {
+.flex-card span {
     font-size: 1.5rem;
     font-weight: 500;
     color: var(--secondary-color);
     text-shadow: 0 0 10px var(--secondary-color);
 }
+.flex-card:hover span {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: white;
+    text-shadow: 0 0 10px white;
+}
 
-.grid-card:hover {
+.flex-card:hover {
     transform: scale(1.02);
     background-color: var(--primary-color);
     border: 2px solid var(--primary-color);
     color: #fff;
 }
 
+.flex-card.skill {
+    flex: 1 1 calc(25% - var(--default-gap));
+    max-width: calc(25% - var(--default-gap));
+}
 ::-webkit-scrollbar {
     width: 20px;
 }
@@ -348,19 +353,20 @@ section.experiences {
         background: var(--default-webkit-top-bottom-linear-gradient);
     }
 
-    nav .logo {
-        display: none;
-        /* position: absolute;
-        top: 16px;
-        left: 15px;
-        font-size: 1.5rem; */
-    }
-
     .main-container {
         display: flex;
         flex-direction: column;
     }
 
+    .main-container .image img {
+        width: 40vw;
+        height: 40vw;
+    }
+
+    .main-container .content {
+        text-align: center;
+        width: 80%;
+    }
     .nav-container .links {
         display: none;
     }
@@ -368,10 +374,6 @@ section.experiences {
     .hamburg,
     .cancel {
         display: block;
-    }
-
-    .main-container .content {
-        width: 80%;
     }
 
     .cancel {
@@ -388,14 +390,21 @@ section.experiences {
         margin-bottom: 0px;
     }
 
-    .grid {
-        grid-template-columns: repeat(1, 1fr);
+    .flex-card {
+        flex: 1 1 calc(100% - var(--default-gap));
+        max-width: calc(100% - var(--default-gap));
+    }
+
+    .flex-card.skill {
+        flex: 1 1 calc(100% - var(--default-gap));
+        max-width: calc(100% - var(--default-gap));
     }
     .experiences-info {
         flex-direction: column;
     }
-    .experiences-info img {
-        width: 75vw;
-        height: 75vw;
+
+    section.experiences {
+        padding: 8rem 12%;
+        width: 100%;
     }
 }

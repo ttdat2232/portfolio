@@ -22,7 +22,7 @@
         }
     },
     "exp": {
-        "Tma": {
+        "tma": {
             "title": "Intern Backend Developer",
             "information": "Learned about software development and maintained web applications using ASP.NET Core and Angular.<br>Implemented RESTful APIs using ASP.NET Core Web API and responsive frontend with Angular Framework.<br>Optimized database queries for improved performance."
         },
