@@ -22,6 +22,10 @@
         }
     },
     "exp": {
+        "Tma": {
+            "title": "Intern Backend Developer",
+            "information": "Learned about software development and maintained web applications using ASP.NET Core and Angular.<br>Implemented RESTful APIs using ASP.NET Core Web API and responsive frontend with Angular Framework.<br>Optimized database queries for improved performance."
+        },
         "idb": {
             "title": ".NET Developer",
             "information": "Developed and maintained Autocall applications using ASP.NET Core and Asterisk.<br>Implemented business logic, data access layers.<br>Collaborated with QA team to ensure code quality.<br>Participated in Agile development process."
