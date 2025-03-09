@@ -155,7 +155,7 @@ section.about {
     height: 90vh;
 }
 
-.main-container {
+.about {
     width: 100%;
     height: 100%;
     display: flex;
@@ -163,39 +163,39 @@ section.about {
     align-items: center;
 }
 
-.main-container .image {
+.about .image {
     z-index: -1;
     width: 50%;
     display: flex;
     justify-content: center;
 }
 
-.main-container .image img {
+.about .image img {
     width: 30vw;
     height: 30vw;
     object-fit: cover;
     border-radius: 50%;
 }
 
-.main-container .content {
+.about .content {
     color: black;
     width: 40%;
     min-height: 100px;
 }
 
-.main-container .content h1 {
+.about .content h1 {
     font-size: clamp(1rem, 2rem + 5vw, 3rem);
 }
-.main-container .content h1 span {
+.about .content h1 span {
     display: inline-block;
     color: var(--secondary-color);
     text-shadow: 0 0 10px var(--secondary-color);
 }
-.main-container .content .typewriter {
+.about .content .typewriter {
     font-weight: 600;
     font-size: clamp(1rem, 1rem + 5vw, 2rem);
 }
-.main-container .content .typewriter span {
+.about .content .typewriter span {
     color: var(--secondary-color);
     display: inline-block;
     text-shadow: 0 0 10px var(--secondary-color);
@@ -204,7 +204,7 @@ section.about {
     transition: 0.3s linear;
 }
 
-.main-container .content p {
+.about .content p {
     font-size: clamp(0.4rem, 0.2rem + 9vw, 1rem);
     margin: 10px 0;
 }
@@ -301,6 +301,50 @@ section.experiences {
     margin: auto;
 }
 
+.flex-card.skill {
+    flex: 1 1 calc(25% - var(--default-gap));
+    max-width: calc(25% - var(--default-gap));
+}
+
+.flex-card.skill .logo {
+    min-width: 50px;
+    min-height: 50px;
+    width: 5vw;
+    height: 5vw;
+}
+.flex-card.skill img {
+    width: 100%;
+    height: 100%;
+}
+
+.flex-card.skill.csharp:hover {
+    border: 2px solid #a179dc;
+    color: #a179dc;
+    background: none;
+}
+.flex-card.skill.angular:hover {
+    border: 2px solid #c3002f;
+    color: #c3002f;
+    background: none;
+}
+
+.flex-card.skill.docker:hover {
+    border: 2px solid #1d63ed;
+    color: #1d63ed;
+    background: none;
+}
+
+.flex-card.skill.postgresql:hover {
+    border: 2px solid #336791;
+    color: #336791;
+    background: none;
+}
+
+.flex-card.skill.golang:hover {
+    border: 2px solid #fff;
+    background: none;
+}
+
 .flex-card i {
     font-size: 1.5rem;
     margin-bottom: 1rem;
@@ -326,10 +370,6 @@ section.experiences {
     color: #fff;
 }
 
-.flex-card.skill {
-    flex: 1 1 calc(25% - var(--default-gap));
-    max-width: calc(25% - var(--default-gap));
-}
 ::-webkit-scrollbar {
     width: 20px;
 }
@@ -345,6 +385,11 @@ section.experiences {
     .experiences-info {
         flex-direction: column;
     }
+
+    .flex-card.skill {
+        flex: 1 1 calc(33.33% - var(--default-gap));
+        max-width: calc(33.33% - var(--default-gap));
+    }
 }
 @media (max-width: 884px) {
     body {
@@ -353,17 +398,21 @@ section.experiences {
         background: var(--default-webkit-top-bottom-linear-gradient);
     }
 
-    .main-container {
+    .skills {
+        margin-top: 10vh;
+    }
+
+    .about {
         display: flex;
         flex-direction: column;
     }
 
-    .main-container .image img {
+    .about .image img {
         width: 40vw;
         height: 40vw;
     }
 
-    .main-container .content {
+    .about .content {
         text-align: center;
         width: 80%;
     }
@@ -385,7 +434,7 @@ section.experiences {
         height: 2.5rem;
         font-size: 1.5rem;
     }
-    .main-container .image {
+    .about .image {
         width: 80%;
         margin-bottom: 0px;
     }
@@ -396,8 +445,8 @@ section.experiences {
     }
 
     .flex-card.skill {
-        flex: 1 1 calc(100% - var(--default-gap));
-        max-width: calc(100% - var(--default-gap));
+        flex: 1 1 calc(50% - var(--default-gap));
+        max-width: calc(50% - var(--default-gap));
     }
     .experiences-info {
         flex-direction: column;
@@ -406,5 +455,12 @@ section.experiences {
     section.experiences {
         padding: 8rem 12%;
         width: 100%;
+    }
+}
+
+@media (max-width: 660px) {
+    .flex-card.skill {
+        flex: 1 1 calc(100% - var(--default-gap));
+        max-width: calc(100% - var(--default-gap));
     }
 }
