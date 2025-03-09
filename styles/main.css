@@ -4,7 +4,7 @@
     --default-section-padding: 6rem 12%;
     --default-color: #fff;
     --default-gap: 3rem;
-    --global-item-size: 2rem;
+    --global-item-size: 1.5rem;
     --primary-color: rgb(0, 162, 237);
     --secondary-color: rgb(59, 137, 255);
     --shawdow-secondary-color: rgb(0, 102, 255);
@@ -288,8 +288,9 @@ section.experiences {
 .flex-card {
     flex: 1 1 calc(50% - var(--default-gap));
     max-width: calc(50% - var(--default-gap));
-    border: 2px solid var(--secondary-color);
     border-radius: var(--global-item-size);
+    box-shadow: rgb(72, 71, 137) 3px 3px 6px 0px inset,
+        rgb(59, 137, 255) -3px -3px 6px 1px inset;
     padding: var(--global-item-size);
     display: flex;
     flex-direction: column;
