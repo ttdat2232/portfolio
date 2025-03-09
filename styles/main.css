@@ -1,25 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
+    --default-section-padding: 6rem 12%;
+    --default-color: #fff;
     --default-gap: 3rem;
     --global-item-size: 2rem;
     --primary-color: rgb(0, 162, 237);
     --secondary-color: rgb(0, 100, 255);
-    --default-linear-gradient: linear-gradient(
-        rgb(12, 82, 139),
-        rgb(255, 255, 255)
-    );
+    --default-linear-gradient: linear-gradient(rgb(5, 0, 96), rgb(0, 0, 0) 15%);
     --defaul-webkit-linear-gradient: linear-gradient(
-        rgb(14, 107, 184),
-        rgb(255, 255, 255)
-    );
-    --default-top-bottom-linear-gradient: linear-gradient(
-        rgb(14, 107, 184),
-        rgb(255, 255, 255)
-    );
-    --default-webkit-top-bottom-linear-gradient: linear-gradient(
-        rgb(14, 107, 184),
-        rgb(255, 255, 255)
+        rgb(5, 0, 96),
+        rgb(0, 0, 0) 15%
     );
     --default-transiontion: 0.2s linear;
 }
@@ -40,6 +31,7 @@ html {
 }
 
 body {
+    color: var(--default-color);
     width: 100%;
     overflow: hidden;
     background: var(--default-linear-gradient);
@@ -50,6 +42,7 @@ nav {
     width: 100%;
     height: 10vh;
     position: sticky;
+    position: -webkit-sticky;
 }
 
 .nav-container {
@@ -63,7 +56,7 @@ nav {
 .nav-container .links a {
     position: relative;
     font-size: 1.2rem;
-    color: black;
+    color: var(--default-color);
     font-weight: 500;
     transform: 0.3s linear;
 }
@@ -91,18 +84,18 @@ nav {
 }
 
 .nav-container .btn-contact a {
-    color: white;
-    transition: 0.3s linear;
+    color: var(--default-color);
+    transition: 0.2s linear;
 }
 
 .nav-container .btn-contact:hover,
 .nav-container .btn-contact:hover a {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--default-color);
 }
 
 .nav-container .links a:hover {
-    color: white;
+    color: var(--default-color);
 }
 
 .hamburg,
@@ -135,7 +128,7 @@ nav {
 }
 
 .dropdown .links a {
-    color: white;
+    color: var(--default-color);
     display: flex;
     justify-content: center;
     padding: 15px 0;
@@ -178,7 +171,7 @@ section.about {
 }
 
 .about .content {
-    color: black;
+    color: var(--default-color);
     width: 40%;
     min-height: 100px;
 }
@@ -226,7 +219,7 @@ section.about {
 
 .social-links i:hover {
     scale: 1.2;
-    color: white;
+    color: var(--default-color);
     background-color: var(--secondary-color);
     filter: drop-shadow(0 0 10px var(--secondary-color));
 }
@@ -253,8 +246,14 @@ section.about {
     background-color: transparent;
     box-shadow: 0 0 20px var(--secondary-color);
 }
+
+section.skills {
+    padding: var(--default-section-padding);
+    width: 100%;
+}
+
 section.experiences {
-    padding: 6rem 12%;
+    padding: var(--default-section-padding);
     width: 100%;
 }
 
@@ -365,7 +364,7 @@ section.experiences {
 
 .flex-card:hover {
     transform: scale(1.02);
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     border: 2px solid var(--primary-color);
     color: #fff;
 }
@@ -379,7 +378,8 @@ section.experiences {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--default-top-bottom-linear-gradient);
+    background: var(--default-linear-gradient);
+    background: var(--defaul-webkit-linear-gradient);
 }
 @media (max-width: 1280px) {
     .experiences-info {
@@ -394,8 +394,8 @@ section.experiences {
 @media (max-width: 884px) {
     body {
         overflow-y: visible;
-        background: var(--default-top-bottom-linear-gradient);
-        background: var(--default-webkit-top-bottom-linear-gradient);
+        background: var(--default-linear-gradient);
+        background: var(--defaul-webkit-linear-gradient);
     }
 
     .skills {
@@ -426,7 +426,7 @@ section.experiences {
     }
 
     .cancel {
-        color: white;
+        color: var(--default-color);
     }
 
     .social-links i {
