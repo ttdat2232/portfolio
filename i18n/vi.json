@@ -24,11 +24,11 @@
     "exp": {
         "idb": {
             "title": "Lập trình viên .NET",
-            "information": "<ul><li>Phát triển và duy trì các ứng dụng Autocall sử dụng ASP.NET Core và Asterisk.</li><li>Triển khai logic nghiệp vụ, các lớp truy cập dữ liệu.</li><li>Hợp tác với đội QA để đảm bảo chất lượng mã.</li><li>Tham gia vào quy trình phát triển Agile.</li></ul>"
+            "information": "Phát triển và duy trì các ứng dụng Autocall sử dụng ASP.NET Core và Asterisk.<br>Triển khai logic nghiệp vụ, các lớp truy cập dữ liệu.<br>Hợp tác với đội QA để đảm bảo chất lượng mã.<br>Tham gia vào quy trình phát triển Agile."
         },
         "squareOne": {
             "title": "Lập trình viên .NET",
-            "information": "<ul><li>Phát triển và duy trì các ứng dụng web có khả năng mở rộng sử dụng ASP.NET Core, tập trung vào bảng điều khiển quản trị và giao diện người dùng.</li><li>Triển khai RabbitMQ để xếp hàng tin nhắn hiệu quả và Redis để lưu trữ dữ liệu truy cập thường xuyên nhằm nâng cao hiệu suất.</li><li>Hợp tác với đội QA để đảm bảo chất lượng mã cao và tham gia vào quy trình phát triển Agile để cung cấp các giải pháp phần mềm chính xác.</li><li>Đóng vai trò là thành viên tích cực của đội, thúc đẩy sự hợp tác giữa các lập trình viên và người kiểm thử để đáp ứng thời hạn dự án và duy trì các tiêu chuẩn chất lượng cao.</li></ul>"
+            "information": "Phát triển và duy trì các ứng dụng web có khả năng mở rộng sử dụng ASP.NET Core, tập trung vào bảng điều khiển quản trị và giao diện người dùng.<br>Triển khai RabbitMQ để xếp hàng tin nhắn hiệu quả và Redis để lưu trữ dữ liệu truy cập thường xuyên nhằm nâng cao hiệu suất.<br>Hợp tác với đội QA để đảm bảo chất lượng mã cao và tham gia vào quy trình phát triển Agile để cung cấp các giải pháp phần mềm chính xác.<br>Đóng vai trò là thành viên tích cực của đội, thúc đẩy sự hợp tác giữa các lập trình viên và người kiểm thử để đáp ứng thời hạn dự án và duy trì các tiêu chuẩn chất lượng cao."
         }
     }
 }
