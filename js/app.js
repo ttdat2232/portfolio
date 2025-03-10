@@ -82,3 +82,69 @@ Array.from(navLinkContainerElements).forEach((element) => {
         false
     );
 });
+
+let downloadBtn = document.getElementById("download-cv");
+downloadBtn.onclick = async () => {
+    downloadBtn.classList.add("btn-downloading");
+    let downloadUrl =
+        "https://raw.githubusercontent.com/ttdat2232/portfolio/main/resources/files/TruongTienDat_BackendDeveloper.pdf";
+    let filename = "TurongTienDat_BackendDeveloper.pdf";
+    fetch(downloadUrl)
+        .then((res) => res.blob())
+        .then((blob) => {
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = filename;
+            link.click();
+            URL.revokeObjectURL(blob);
+        })
+        .finally(() => {
+            downloadBtn.classList.remove("btn-downloading");
+        });
+};
+
+function formatState(state, countryData) {
+    if (!state.id) {
+        return state.text;
+    }
+    let chooseCountry = countryData.results.find(
+        (country) => country.id === state.id
+    );
+    let baseUrl = "https://cdn.countryflags.com/thumbs";
+    let $state = $(
+        '<span><img src="' +
+            baseUrl +
+            "/" +
+            chooseCountry.flag +
+            '/flag-800.png" width="5%" /> ' +
+            chooseCountry.text +
+            "</span>"
+    );
+    return $state;
+}
+
+const countryData = {
+    results: [
+        {
+            id: 1,
+            text: "Việt Nam",
+            code: "vi",
+            flag: "vietnam",
+        },
+        {
+            id: 2,
+            text: "United State",
+            flag: "united-states-of-america",
+            code: "en",
+            selected: true,
+        },
+    ],
+};
+$(document).ready(function () {
+    $(".country-selector").select2({
+        data: countryData,
+        templateResult: function (state) {
+            return formatState(state, countryData);
+        },
+    });
+});

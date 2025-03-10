@@ -4,15 +4,25 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title data-i18n="header.title"></title>
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <link
+            href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+            rel="stylesheet"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
         <script
             src="https://kit.fontawesome.com/4807d52c9d.js"
             crossorigin="anonymous"
         ></script>
+
         <link rel="stylesheet" href="./styles/main.css" />
     </head>
     <body>
         <nav>
             <div class="nav-container">
+                <!-- <select class="country-selector">
+                </select> -->
                 <div class="links">
                     <div class="link">
                         <a href="#about" data-i18n="nav.link.about">Holder</a>
@@ -66,13 +76,20 @@
                 <div class="typewriter" data-i18n="greeting.job"></div>
                 <p data-i18n="greeting.information">Holder</p>
                 <div class="social-links">
-                    <a href="#"><i class="fa-brands fa-github"></i></a>
-                    <a href="#">
+                    <a target="_blank" href="https://github.com/ttdat2232/"
+                        ><i class="fa-brands fa-github"></i
+                    ></a>
+                    <a
+                        target="_blank"
+                        href="https://www.linkedin.com/in/%C4%91%E1%BA%A1t-tr%C6%B0%C6%A1ng-ti%E1%BA%BFn-645a58255/"
+                    >
                         <i class="fa-brands fa-linkedin"></i>
                     </a>
                 </div>
                 <div class="btn">
-                    <button data-i18n="btn.download.cv">Holder</button>
+                    <button id="download-cv" data-i18n="btn.download.cv">
+                        Holder
+                    </button>
                 </div>
             </div>
         </section>
@@ -140,21 +157,30 @@
             <div class="experiences-info">
                 <div class="flex">
                     <div class="flex-card">
-                        <i class="fa-solid fa-code"></i>
+                        <div>
+                            <i class="fa-solid fa-code"></i>
+                            <h2 data-i18n="exp.tma.name">Holder</h2>
+                        </div>
                         <span data-i18n="exp.tma.title">Holder</span>
                         <h3>10/2022 - 2/2023</h3>
                         <p data-i18n="exp.tma.information">Holder</p>
                     </div>
 
                     <div class="flex-card">
-                        <i class="fa-solid fa-code"></i>
+                        <div>
+                            <i class="fa-solid fa-code"></i>
+                            <h2 data-i18n="exp.idb.name">Holder</h2>
+                        </div>
                         <span data-i18n="exp.idb.title">Holder</span>
                         <h3>08/2023 - 08/2024</h3>
                         <p data-i18n="exp.idb.information">Holder</p>
                     </div>
 
                     <div class="flex-card">
-                        <i class="fa-solid fa-code"></i>
+                        <div>
+                            <i class="fa-solid fa-code"></i>
+                            <h2 data-i18n="exp.squareOne.name">Holder</h2>
+                        </div>
                         <span data-i18n="exp.squareOne.title">Holder</span>
                         <h3>10/2024 - Present</h3>
                         <p data-i18n="exp.squareOne.information">Holder</p>

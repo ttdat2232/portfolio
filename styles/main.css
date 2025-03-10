@@ -13,7 +13,9 @@
         rgb(5, 0, 96),
         rgb(0, 0, 0) 15%
     );
-    --default-transiontion: 0.2s linear;
+    --default-transition: 0.2s linear;
+    --default-font-size: 1em;
+    --default-gap: 1em;
 }
 
 * {
@@ -24,11 +26,13 @@
     font-optical-sizing: auto;
     font-style: normal;
     text-decoration: none;
+    font-size: var(--default-font-size);
 }
 
 html {
     overflow-x: hidden;
     overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -59,7 +63,7 @@ nav {
     font-size: 1.2rem;
     color: var(--default-color);
     font-weight: 500;
-    transform: var(--default-transiontion);
+    transform: var(--default-transition);
 }
 
 .nav-container .links a::before {
@@ -70,7 +74,7 @@ nav {
     width: 0;
     height: 3px;
     background-color: var(--secondary-color);
-    transition: var(--default-transiontion);
+    transition: var(--default-transition);
 }
 .nav-container .links a:hover::before {
     width: 100%;
@@ -81,12 +85,12 @@ nav {
     padding: 5px 20px;
     border-radius: 20px;
     border: 2px solid var(--primary-color);
-    transition: var(--default-transiontion);
+    transition: var(--default-transition);
 }
 
 .nav-container .btn-contact a {
     color: var(--default-color);
-    transition: var(--default-transiontion);
+    transition: var(--default-transition);
 }
 
 .nav-container .btn-contact:hover {
@@ -124,7 +128,7 @@ nav {
     height: auto;
     backdrop-filter: brightness(40%) blur(3px);
     box-shadow: 0 0 20px black;
-    transition: var(--default-transiontion);
+    transition: var(--default-transition);
 }
 
 .dropdown .links a {
@@ -133,7 +137,7 @@ nav {
     justify-content: center;
     padding: 15px 0;
     align-items: center;
-    transition: var(--default-transiontion);
+    transition: var(--default-transition);
 }
 
 .dropdown .links a:hover {
@@ -176,20 +180,44 @@ section.about {
     min-height: 100px;
 }
 
+.about .content > * {
+    margin-bottom: 0.5em;
+}
+
 .about .content h1 {
     font-size: clamp(1rem, 2rem + 5vw, 3rem);
 }
 .about .content h1 span {
     display: inline-block;
-    color: var(--secondary-color);
-    text-shadow: 0 0 10px var(--shawdow-secondary-color);
+    color: #5497ff;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: rgb(39, 126, 255) 0px 0px 0.3em,
+            rgb(32, 81, 155) 0px 0px 0.4em;
+    }
+    to {
+        text-shadow: rgb(0, 98, 255) 2px 2px 0.5em, rgb(0, 0, 0) -2px -2px 0.6em;
+    }
+}
+@-webkit-keyframes glow {
+    from {
+        text-shadow: rgb(39, 126, 255) 0px 0px 0.3em,
+            rgb(32, 81, 155) 0px 0px 0.4em;
+    }
+    to {
+        text-shadow: rgb(0, 98, 255) 2px 2px 0.5em, rgb(0, 0, 0) -2px -2px 0.6em;
+    }
 }
 .about .content .typewriter {
     font-weight: 600;
     font-size: clamp(1rem, 1rem + 5vw, 2rem);
 }
 .about .content .typewriter span {
-    color: var(--secondary-color);
+    color: #5497ff;
     display: inline-block;
     text-shadow: 0 0 10px var(--secondary-color);
     font-size: var(--global-item-size);
@@ -214,7 +242,7 @@ section.about {
     color: var(--secondary-color);
     font-size: 1.5rem;
     margin: 5px 10px;
-    transition: var(--default-transiontion);
+    transition: var(--default-transition);
 }
 
 .social-links i:hover {
@@ -236,7 +264,36 @@ section.about {
     font-size: 100%;
     font-weight: 700;
     border-radius: 5px;
-    transition: var(--default-transiontion);
+    transition: var(--default-transition);
+}
+
+.content .btn-downloading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.content .btn-downloading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--default-color);
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 
 .content button:hover {
@@ -297,13 +354,29 @@ section.experiences {
     align-items: baseline;
     cursor: pointer;
     justify-content: left;
-    transition: var(--default-transiontion);
+    transition: var(--default-transition);
     margin: auto;
+}
+
+.flex-card h2 {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.flex-card i {
+    margin-bottom: 0;
+    vertical-align: middle;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .flex-card.skill {
     flex: 1 1 calc(25% - var(--default-gap));
     max-width: calc(25% - var(--default-gap));
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1rem;
 }
 
 .flex-card.skill .logo {
@@ -318,55 +391,55 @@ section.experiences {
 }
 
 .flex-card.skill.csharp:hover {
-    border: 2px solid #a179dc;
+    border: none;
     color: #a179dc;
+    box-shadow: #a179dc 3px 3px 6px 0px inset, #a179dc -3px -3px 6px 1px inset;
     background: none;
 }
 .flex-card.skill.angular:hover {
-    border: 2px solid #c3002f;
+    border: none;
     color: #c3002f;
+    box-shadow: #c3002f 3px 3px 6px 0px inset, #c3002f -3px -3px 6px 1px inset;
     background: none;
 }
 
 .flex-card.skill.docker:hover {
-    border: 2px solid #1d63ed;
+    border: none;
     color: #1d63ed;
+    box-shadow: #1d63ed 3px 3px 6px 0px inset, #1d63ed -3px -3px 6px 1px inset;
     background: none;
 }
 
 .flex-card.skill.postgresql:hover {
-    border: 2px solid #336791;
+    border: none;
     color: #336791;
+    box-shadow: #336791 3px 3px 6px 0px inset, #336791 -3px -3px 6px 1px inset;
     background: none;
 }
 
 .flex-card.skill.golang:hover {
-    border: 2px solid #fff;
+    border: none;
+    color: #00add8;
+    box-shadow: #00add8 3px 3px 6px 0px inset, #00add8 -3px -3px 6px 1px inset;
     background: none;
 }
 
-.flex-card i {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
 .flex-card span {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 500;
     color: var(--secondary-color);
     text-shadow: 0 0 10px var(--secondary-color);
 }
 .flex-card:hover span {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 500;
     color: white;
     text-shadow: 0 0 10px white;
 }
 
 .flex-card:hover {
-    transform: scale(1.02);
-    background-color: var(--secondary-color);
-    border: 2px solid var(--primary-color);
+    box-shadow: rgb(72, 71, 137) 3px 3px 6px 0px inset,
+        rgb(59, 137, 255) -3px -3px 6px 1px inset;
     color: #fff;
 }
 
@@ -447,6 +520,8 @@ section.experiences {
     .flex-card {
         flex: 1 1 calc(100% - var(--default-gap));
         max-width: calc(100% - var(--default-gap));
+        box-shadow: rgb(72, 71, 137) 1.5px 1.5px 3px 0px inset,
+            rgb(59, 137, 255) -1.5px -1.5px 3px 0.5px inset;
     }
 
     .flex-card.skill {
