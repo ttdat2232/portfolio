@@ -8,10 +8,10 @@
     --primary-color: rgb(0, 162, 237);
     --secondary-color: rgb(59, 137, 255);
     --shawdow-secondary-color: rgb(0, 102, 255);
-    --default-linear-gradient: linear-gradient(rgb(5, 0, 96), rgb(0, 0, 0) 15%);
+    --default-linear-gradient: linear-gradient(rgb(5, 0, 96), #161618 20%);
     --defaul-webkit-linear-gradient: linear-gradient(
         rgb(5, 0, 96),
-        rgb(0, 0, 0) 15%
+        #161618 20%
     );
     --default-transition: 0.2s linear;
     --default-font-size: 1em;
@@ -346,8 +346,8 @@ section.experiences {
     flex: 1 1 calc(50% - var(--default-gap));
     max-width: calc(50% - var(--default-gap));
     border-radius: var(--global-item-size);
-    box-shadow: rgb(72, 71, 137) 3px 3px 6px 0px inset,
-        rgb(59, 137, 255) -3px -3px 6px 1px inset;
+    box-shadow: rgb(72, 71, 137) 3px 3px .6em 0px inset,
+        rgb(59, 137, 255) -3px -3px .6em 1px inset;
     padding: var(--global-item-size);
     display: flex;
     flex-direction: column;
@@ -393,34 +393,39 @@ section.experiences {
 .flex-card.skill.csharp:hover {
     border: none;
     color: #a179dc;
-    box-shadow: #a179dc 3px 3px 6px 0px inset, #a179dc -3px -3px 6px 1px inset;
+    box-shadow: #a179dc 3px 3px 0.7em 0px inset,
+        #a179dc -3px -3px 0.7em 1px inset;
     background: none;
 }
 .flex-card.skill.angular:hover {
     border: none;
     color: #c3002f;
-    box-shadow: #c3002f 3px 3px 6px 0px inset, #c3002f -3px -3px 6px 1px inset;
+    box-shadow: #c3002f 3px 3px 0.7em 0px inset,
+        #c3002f -3px -3px 0.7em 1px inset;
     background: none;
 }
 
 .flex-card.skill.docker:hover {
     border: none;
     color: #1d63ed;
-    box-shadow: #1d63ed 3px 3px 6px 0px inset, #1d63ed -3px -3px 6px 1px inset;
+    box-shadow: #1d63ed 3px 3px 0.7em 0px inset,
+        #1d63ed -3px -3px 0.7em 1px inset;
     background: none;
 }
 
 .flex-card.skill.postgresql:hover {
     border: none;
     color: #336791;
-    box-shadow: #336791 3px 3px 6px 0px inset, #336791 -3px -3px 6px 1px inset;
+    box-shadow: #336791 3px 3px 0.7em 0px inset,
+        #336791 -3px -3px 0.7em 1px inset;
     background: none;
 }
 
 .flex-card.skill.golang:hover {
     border: none;
     color: #00add8;
-    box-shadow: #00add8 3px 3px 6px 0px inset, #00add8 -3px -3px 6px 1px inset;
+    box-shadow: #00add8 3px 3px 0.7em 0px inset,
+        #00add8 -3px -3px 0.7em 1px inset;
     background: none;
 }
 
@@ -438,8 +443,8 @@ section.experiences {
 }
 
 .flex-card:hover {
-    box-shadow: rgb(72, 71, 137) 3px 3px 6px 0px inset,
-        rgb(59, 137, 255) -3px -3px 6px 1px inset;
+    box-shadow: rgb(72, 71, 137) 3px 3px 0.7em 0px inset,
+        rgb(59, 137, 255) -3px -3px 0.7em 1px inset;
     color: #fff;
 }
 
