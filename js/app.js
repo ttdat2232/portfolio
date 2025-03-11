@@ -169,18 +169,18 @@ let timeout = null;
 document.querySelector("#email-logo").addEventListener("click", (e) => {
     clickCount++;
     timeout = setTimeout(async () => {
-        if (clickCount < 2) {
+        if (clickCount >= 2) {
             await navigator.clipboard.writeText("truongdat2232@gmail.com");
             document.querySelector(".tooltip").innerHTML =
-                translator.getContent(["tooltip", "copySuccess"]);
-        } else if (clickCount >= 2) {
+                translator.getContent(["tooltips", "copySuccess"]);
+        } else if (clickCount < 2) {
             let tempTag = document.createElement("a");
             tempTag.setAttribute("href", "mailto:truongdat2232@gmail.com");
             tempTag.click();
         }
         clearTimeout(timeout);
         clickCount = 0;
-    }, 200);
+    }, 400);
 });
 
 function setupPage() {
