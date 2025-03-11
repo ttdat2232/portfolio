@@ -510,14 +510,6 @@ section.experiences > .experiences-info > .flex > .flex-card > * {
 }
 
 @media (max-width: 1280px) {
-    .custom-select p {
-        display: none;
-    }
-
-    .custom-select img {
-        width: 100%;
-        border-radius: 0;
-    }
     .experiences-info {
         flex-direction: column;
     }
@@ -532,6 +524,15 @@ section.experiences > .experiences-info > .flex > .flex-card > * {
         overflow-y: visible;
         background: var(--default-linear-gradient);
         background: var(--default-webkit-linear-gradient);
+    }
+
+    .custom-select p {
+        display: none;
+    }
+
+    .custom-select img {
+        width: 100%;
+        border-radius: 0;
     }
 
     .skills {

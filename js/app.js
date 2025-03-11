@@ -54,7 +54,6 @@ class Translator {
 }
 
 const translator = new Translator();
-translator.load("en");
 
 let isNavOpen = false;
 
@@ -106,6 +105,7 @@ downloadBtn.onclick = async () => {
 };
 
 let selectedItemEle = document.querySelector(".selected-item");
+
 let isLanguageSelectSectionShow = false;
 selectedItemEle.addEventListener("click", (e) => {
     if (!isLanguageSelectSectionShow) {
@@ -138,3 +138,11 @@ function hideLangauge() {
         ele.style.transform = "translateX(-5vw)";
     });
 }
+
+function setupPage() {
+    let defaultLang = document.querySelector(".language");
+    selectedItemEle.innerHTML = defaultLang.innerHTML;
+    translator.load(defaultLang.dataset.lang);
+}
+
+setupPage();
