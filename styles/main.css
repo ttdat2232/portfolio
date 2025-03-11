@@ -483,7 +483,7 @@ section.experiences > .experiences-info > .flex > .flex-card > * {
 .custom-select {
     position: absolute;
     top: 0.2vh;
-    left: 0.2vw;
+    left: 0.5vw;
 }
 
 .selected-item {
