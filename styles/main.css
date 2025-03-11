@@ -8,9 +8,9 @@
     --primary-color: rgb(0, 162, 237);
     --secondary-color: rgb(59, 137, 255);
     --shadow-secondary-color: rgb(0, 102, 255);
-    --default-linear-gradient: linear-gradient(rgb(5, 0, 96), #161618 20%);
+    --default-linear-gradient: linear-gradient(#050060, #161618 20%);
     --default-webkit-linear-gradient: -webkit-linear-gradient(
-        rgb(5, 0, 96),
+        #050060,
         #161618 20%
     );
     --default-transition: 0.2s linear;
@@ -19,6 +19,8 @@
 }
 
 * {
+    -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
     padding: 0;
     margin: 0;
@@ -127,6 +129,7 @@ nav {
     transform: translateY(-500px);
     width: 100%;
     height: auto;
+    -webkit-backdrop-filter: brightness(40%) blur(3px);
     backdrop-filter: brightness(40%) blur(3px);
     box-shadow: 0 0 20px black;
     transition: var(--default-transition);
@@ -171,6 +174,7 @@ section.about {
 .about .image img {
     width: 30vw;
     height: 30vw;
+    -o-object-fit: cover;
     object-fit: cover;
     border-radius: 50%;
 }
@@ -250,6 +254,7 @@ section.about {
     scale: 1.2;
     color: var(--default-color);
     background-color: var(--secondary-color);
+    -webkit-filter: drop-shadow(0 0 10px var(--secondary-color));
     filter: drop-shadow(0 0 10px var(--secondary-color));
 }
 
@@ -284,8 +289,18 @@ section.about {
     border: 2px solid var(--default-color);
     border-top: 2px solid transparent;
     border-radius: 50%;
+    -webkit-animation: spin 1s linear infinite;
     animation: spin 1s linear infinite;
     transform: translate(-50%, -50%);
+}
+
+@-webkit-keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 
 @keyframes spin {
@@ -334,6 +349,7 @@ section.experiences > .experiences-info > .flex > .flex-card > * {
 .experiences img {
     width: 24vw;
     height: 24vw;
+    -o-object-fit: cover;
     object-fit: cover;
     border-radius: var(--global-item-size);
 }
