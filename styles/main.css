@@ -466,8 +466,8 @@ section.experiences > .experiences-info > .flex > .flex-card > * {
 
 .custom-select {
     position: absolute;
-    top: 2vh;
-    left: 2vw;
+    top: 0.2vh;
+    left: 0.2vw;
 }
 
 .selected-item {
@@ -497,7 +497,6 @@ section.experiences > .experiences-info > .flex > .flex-card > * {
 .selected-item,
 .language {
     cursor: pointer;
-    /* border: 2px solid var(--primary-color); */
     border-radius: 20px;
     display: flex;
     justify-content: space-evenly;
@@ -507,6 +506,18 @@ section.experiences > .experiences-info > .flex > .flex-card > * {
 .language-dropdown .language:hover {
     background-color: var(--secondary-color);
     color: var(--default-color);
+}
+
+.tooltip {
+    opacity: 0;
+    position: absolute;
+    z-index: 1000;
+    color: var(--default-color);
+    background-color: #161618;
+    padding: 5px 10px;
+    border-radius: 5px;
+
+    transition: var(--default-transition);
 }
 
 @media (max-width: 1280px) {

@@ -3,6 +3,7 @@ class Translator {
         this._loadAttempts = 0;
         this._lang = this.getLanguage();
         this._elements = document.querySelectorAll("[data-i18n]");
+        this._jsonData = null;
     }
 
     getLanguage() {
@@ -10,6 +11,19 @@ class Translator {
             ? navigator.languages[0]
             : navigator.language;
         return lang.substring(0, 2);
+    }
+
+    getContent(keys) {
+        try {
+            let text = keys.reduce((obj, i) => obj[i], this._jsonData);
+            if (text) {
+                return text;
+            } else {
+                return keys[keys.length - 1];
+            }
+        } catch {
+            return keys[keys.length - 1];
+        }
     }
 
     load(lang = null) {
@@ -24,18 +38,10 @@ class Translator {
         fetch(url)
             .then((res) => res.json())
             .then((translation) => {
+                this._jsonData = translation;
                 this._elements.forEach((element) => {
                     let keys = element.dataset.i18n.split(".");
-                    try {
-                        let text = keys.reduce((obj, i) => obj[i], translation);
-                        if (text) {
-                            element.innerHTML = text;
-                        } else {
-                            element.innerHTML = keys[keys.length - 1];
-                        }
-                    } catch {
-                        element.innerHTML = keys[keys.length - 1];
-                    }
+                    element.innerHTML = this.getContent(keys);
                     this._loadAttempts = 0;
                 });
             })
@@ -138,6 +144,44 @@ function hideLangauge() {
         ele.style.transform = "translateX(-5vw)";
     });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const tooltip = document.createElement("div");
+    tooltip.classList.add("tooltip");
+    document.body.appendChild(tooltip);
+    document.querySelectorAll("[data-tooltip]").forEach((ele) => {
+        ele.addEventListener("mouseenter", () => {
+            let rect = ele.getBoundingClientRect();
+            let keys = ele.dataset.tooltip.split(".");
+            tooltip.innerHTML = translator.getContent(keys);
+            tooltip.style.left = rect.left + window.screenX + "px";
+            tooltip.style.top = rect.bottom + window.screenY + "px";
+            tooltip.style.opacity = 1;
+        });
+        ele.addEventListener("mouseleave", () => {
+            tooltip.style.opacity = 0;
+        });
+    });
+});
+
+let clickCount = 0;
+let timeout = null;
+document.querySelector("#email-logo").addEventListener("click", (e) => {
+    clickCount++;
+    timeout = setTimeout(async () => {
+        if (clickCount < 2) {
+            await navigator.clipboard.writeText("truongdat2232@gmail.com");
+            document.querySelector(".tooltip").innerHTML =
+                translator.getContent(["tooltip", "copySuccess"]);
+        } else if (clickCount >= 2) {
+            let tempTag = document.createElement("a");
+            tempTag.setAttribute("href", "mailto:truongdat2232@gmail.com");
+            tempTag.click();
+        }
+        clearTimeout(timeout);
+        clickCount = 0;
+    }, 200);
+});
 
 function setupPage() {
     let defaultLang = document.querySelector(".language");

@@ -39,6 +39,7 @@
         }
     },
     "tooltips": {
-        "email": "Send an email to truongdat2232@gmail.com, or double click to copy the email"
+        "email": "Send an email to truongdat2232@gmail.com, or double click to copy the email",
+        "copySuccess": "Coppied to clipboard"
     }
 }

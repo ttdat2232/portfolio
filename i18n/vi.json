@@ -39,6 +39,7 @@
         }
     },
     "tooltips": {
-        "email": "Gửi email tới truongdat2232@gmail.com, hoặc nhấp đúp để sao chép email"
+        "email": "Gửi email tới truongdat2232@gmail.com, hoặc nhấp đúp để sao chép email",
+        "copySuccess": "Đã sao chép vào clipboard"
     }
 }
