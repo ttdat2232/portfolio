@@ -7,9 +7,9 @@
     --global-item-size: 1.5rem;
     --primary-color: rgb(0, 162, 237);
     --secondary-color: rgb(59, 137, 255);
-    --shawdow-secondary-color: rgb(0, 102, 255);
+    --shadow-secondary-color: rgb(0, 102, 255);
     --default-linear-gradient: linear-gradient(rgb(5, 0, 96), #161618 20%);
-    --defaul-webkit-linear-gradient: linear-gradient(
+    --default-webkit-linear-gradient: -webkit-linear-gradient(
         rgb(5, 0, 96),
         #161618 20%
     );
@@ -19,6 +19,7 @@
 }
 
 * {
+    appearance: none;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -40,7 +41,7 @@ body {
     width: 100%;
     overflow: hidden;
     background: var(--default-linear-gradient);
-    background: var(--defaul-webkit-linear-gradient);
+    background: var(--default-webkit-linear-gradient);
 }
 
 nav {
@@ -314,6 +315,9 @@ section.experiences {
     width: 100%;
 }
 
+section.experiences > .experiences-info > .flex > .flex-card > * {
+    margin-bottom: 0.5em;
+}
 .section-title {
     text-align: center;
     font-size: var(--global-item-size);
@@ -346,8 +350,8 @@ section.experiences {
     flex: 1 1 calc(50% - var(--default-gap));
     max-width: calc(50% - var(--default-gap));
     border-radius: var(--global-item-size);
-    box-shadow: rgb(72, 71, 137) 3px 3px .6em 0px inset,
-        rgb(59, 137, 255) -3px -3px .6em 1px inset;
+    box-shadow: rgb(72, 71, 137) 3px 3px 0.6em 0px inset,
+        rgb(59, 137, 255) -3px -3px 0.6em 1px inset;
     padding: var(--global-item-size);
     display: flex;
     flex-direction: column;
@@ -367,7 +371,6 @@ section.experiences {
     margin-bottom: 0;
     vertical-align: middle;
     font-size: 1.5rem;
-    margin-bottom: 1rem;
 }
 
 .flex-card.skill {
@@ -443,8 +446,8 @@ section.experiences {
 }
 
 .flex-card:hover {
-    box-shadow: rgb(72, 71, 137) 3px 3px 0.7em 0px inset,
-        rgb(59, 137, 255) -3px -3px 0.7em 1px inset;
+    box-shadow: rgb(72, 71, 137) 3px 3px 1em 0px inset,
+        rgb(59, 137, 255) -3px -3px 1.1em 1px inset;
     color: #fff;
 }
 
@@ -458,9 +461,63 @@ section.experiences {
 
 ::-webkit-scrollbar-thumb {
     background: var(--default-linear-gradient);
-    background: var(--defaul-webkit-linear-gradient);
+    background: var(--default-webkit-linear-gradient);
 }
+
+.custom-select {
+    position: absolute;
+    top: 2vh;
+    left: 2vw;
+}
+
+.selected-item {
+    padding: 0.4em;
+    margin-bottom: 1em;
+    transition: var(--default-transition);
+}
+
+.language-dropdown {
+    list-style: none;
+}
+
+.language {
+    padding: 10px;
+    margin-bottom: 5px;
+    opacity: 0;
+    transform: translateX(-5vw);
+}
+
+.language img,
+.selected-item img {
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+}
+
+.selected-item,
+.language {
+    cursor: pointer;
+    /* border: 2px solid var(--primary-color); */
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: var(--default-transition);
+}
+.language-dropdown .language:hover {
+    background-color: var(--secondary-color);
+    color: var(--default-color);
+}
+
 @media (max-width: 1280px) {
+    .custom-select p {
+        display: none;
+    }
+
+    .custom-select img {
+        width: 100%;
+        border-radius: 0;
+    }
     .experiences-info {
         flex-direction: column;
     }
@@ -474,7 +531,7 @@ section.experiences {
     body {
         overflow-y: visible;
         background: var(--default-linear-gradient);
-        background: var(--defaul-webkit-linear-gradient);
+        background: var(--default-webkit-linear-gradient);
     }
 
     .skills {
@@ -528,7 +585,6 @@ section.experiences {
         box-shadow: rgb(72, 71, 137) 1.5px 1.5px 3px 0px inset,
             rgb(59, 137, 255) -1.5px -1.5px 3px 0.5px inset;
     }
-
     .flex-card.skill {
         flex: 1 1 calc(50% - var(--default-gap));
         max-width: calc(50% - var(--default-gap));

@@ -5,12 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title data-i18n="header.title"></title>
 
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-        <link
-            href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
-            rel="stylesheet"
-        />
-        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
         <script
             src="https://kit.fontawesome.com/4807d52c9d.js"
             crossorigin="anonymous"
@@ -20,6 +14,19 @@
     </head>
     <body>
         <nav>
+            <div class="custom-select">
+                <div class="selected-item">Select language</div>
+                <div class="language-dropdown">
+                    <div data-lang="en" class="language">
+                        <img src="https://flagcdn.com/us.svg" alt="" />
+                        <p>English</p>
+                    </div>
+                    <div data-lang="vi" class="language">
+                        <img src="https://flagcdn.com/vn.svg" alt="" />
+                        <p>Việt Nam</p>
+                    </div>
+                </div>
+            </div>
             <div class="nav-container">
                 <div class="links">
                     <div class="link">
@@ -64,10 +71,6 @@
         </nav>
         <section id="about" class="about">
             <div class="image">
-                <!-- <img
-                    src="https://img.freepik.com/free-photo/beauty-digital-art-through-immersive-experiences_23-2151250211.jpg"
-                    alt="avatar"
-                /> -->
                 <img src="./resources/avatar/avatar.PNG" alt="avatar" />
             </div>
             <div class="content">
@@ -147,7 +150,7 @@
                 <div class="flex-card skill">
                     <div class="logo"></div>
                     <div>
-                        <h3 class="skill-title">Microsft SQL Server</h3>
+                        <h3 class="skill-title">Microsoft SQL Server</h3>
                     </div>
                 </div>
             </div>

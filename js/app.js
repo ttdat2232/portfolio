@@ -1,6 +1,6 @@
 class Translator {
     constructor() {
-        this._loadAttemps = 0;
+        this._loadAttempts = 0;
         this._lang = this.getLanguage();
         this._elements = document.querySelectorAll("[data-i18n]");
     }
@@ -13,10 +13,10 @@ class Translator {
     }
 
     load(lang = null) {
-        if (this._loadAttemps === 3) {
+        if (this._loadAttempts === 3) {
             throw Error("couldn't load language file");
         }
-        this._loadAttemps++;
+        this._loadAttempts++;
         if (lang) {
             this._lang = lang;
         }
@@ -36,11 +36,13 @@ class Translator {
                     } catch {
                         element.innerHTML = keys[keys.length - 1];
                     }
+                    this._loadAttempts = 0;
                 });
             })
             .catch((reason) => {
                 console.log(reason);
                 this.load("en"); // load default
+                this._loadAttempts = 0;
             });
     }
 
@@ -103,48 +105,36 @@ downloadBtn.onclick = async () => {
         });
 };
 
-function formatState(state, countryData) {
-    if (!state.id) {
-        return state.text;
+let selectedItemEle = document.querySelector(".selected-item");
+let isLanguageSelectSectionShow = false;
+selectedItemEle.addEventListener("click", (e) => {
+    if (!isLanguageSelectSectionShow) {
+        document.querySelectorAll(".language").forEach((ele) => {
+            ele.style.opacity = 1;
+            ele.style.transform = "translateX(0)";
+        });
+    } else {
+        document.querySelectorAll(".language").forEach((ele) => {
+            ele.style.opacity = 0;
+            ele.style.transform = "translateX(-5vw)";
+        });
     }
-    let chooseCountry = countryData.results.find(
-        (country) => country.id === state.id
-    );
-    let baseUrl = "https://cdn.countryflags.com/thumbs";
-    let $state = $(
-        '<span><img src="' +
-            baseUrl +
-            "/" +
-            chooseCountry.flag +
-            '/flag-800.png" width="5%" /> ' +
-            chooseCountry.text +
-            "</span>"
-    );
-    return $state;
-}
+    isLanguageSelectSectionShow = !isLanguageSelectSectionShow;
+});
 
-const countryData = {
-    results: [
-        {
-            id: 1,
-            text: "Việt Nam",
-            code: "vi",
-            flag: "vietnam",
-        },
-        {
-            id: 2,
-            text: "United State",
-            flag: "united-states-of-america",
-            code: "en",
-            selected: true,
-        },
-    ],
-};
-$(document).ready(function () {
-    $(".country-selector").select2({
-        data: countryData,
-        templateResult: function (state) {
-            return formatState(state, countryData);
-        },
+document.querySelectorAll(".language").forEach((ele) => {
+    ele.addEventListener("click", (e) => {
+        selectedItemEle.innerHTML = ele.innerHTML;
+        translator.load(ele.dataset.lang);
+        translator.toggleLangTag();
+        hideLangauge();
     });
 });
+
+function hideLangauge() {
+    isLanguageSelectSectionShow = false;
+    document.querySelectorAll(".language").forEach((ele) => {
+        ele.style.opacity = 0;
+        ele.style.transform = "translateX(-5vw)";
+    });
+}
