@@ -448,6 +448,14 @@ section.experiences > .experiences-info > .flex > .flex-card > * {
     background: none;
 }
 
+.flex-card.skill.rabbitmq:hover {
+    border: none;
+    color: #FF6600;
+    box-shadow: #FF6600 3px 3px 0.7em 0px inset,
+        #FF6600 -3px -3px 0.7em 1px inset;
+    background: none;
+}
+
 .flex-card span {
     font-size: 1.25rem;
     font-weight: 500;
