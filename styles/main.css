@@ -450,9 +450,9 @@ section.experiences > .experiences-info > .flex > .flex-card > * {
 
 .flex-card.skill.rabbitmq:hover {
     border: none;
-    color: #FF6600;
-    box-shadow: #FF6600 3px 3px 0.7em 0px inset,
-        #FF6600 -3px -3px 0.7em 1px inset;
+    color: #ff6600;
+    box-shadow: #ff6600 3px 3px 0.7em 0px inset,
+        #ff6600 -3px -3px 0.7em 1px inset;
     background: none;
 }
 
