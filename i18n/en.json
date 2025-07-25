@@ -39,14 +39,18 @@
         }
     },
     "project": {
+        "personal": "Personal",
+        "work": "Work",
         "myBlog": {
             "name": "My Blog",
-            "description": "Develop a RESTful web API that allows users to register, authenticate, upload blog posts with rich text and images, edit or delete their content, and categorize posts by tags or topics. Includes user profile management and admin moderation features."
+            "description": "Develop a RESTful web API that allows users to register, authenticate, upload blog posts with rich text and images, edit or delete their content, and categorize posts by tags or topics. Includes user profile management and admin moderation features.",
+            "technologies": "ASP.NET Framework, C#, Redis, RabbitMQ, Docker"
         },
 
         "youShop": {
             "name": "You Shop",
-            "description": "An e-commerce platform designed for small to mid-size businesses to showcase and sell products online. Features include product listings, shopping cart, secure checkout, order tracking, user reviews, and an admin dashboard for inventory and order management."
+            "description": "An e-commerce platform designed for small to mid-size businesses to showcase and sell products online. Features include product listings, shopping cart, secure checkout, order tracking, user reviews, and an admin dashboard for inventory and order management.",
+            "technologies": "Golang, Gin Framework, RabbitMQ, Docker"
         }
     },
     "tooltips": {

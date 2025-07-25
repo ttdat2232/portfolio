@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title data-i18n="header.title"></title>
+        <link rel="icon" href="./resources/favicon.ico" type="image/x-icon" />
         <link
             href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"
             rel="stylesheet"
@@ -48,11 +49,6 @@
                             >Holder</a
                         >
                     </div>
-                    <div class="link btn-contact">
-                        <a href="#contact" data-i18n="nav.link.contact"
-                            >Holder</a
-                        >
-                    </div>
                 </div>
                 <i class="fa-solid fa-bars hamburg" onclick="showNavbar()"></i>
             </div>
@@ -64,11 +60,6 @@
                         >Holder</a
                     >
                     <a href="#projects" data-i18n="nav.link.projects">Holder</a>
-                    <a href="#contact" data-i18n="nav.link.contact">Holder</a>
-                    <i
-                        class="fa-solid fa-xmark cancel"
-                        onclick="closeNavbar()"
-                    ></i>
                 </div>
             </div>
         </nav>
@@ -117,7 +108,12 @@
                     </div>
                 </div>
                 <div class="flex-card skill ef">
-                    <div class="logo"></div>
+                    <div class="logo">
+                        <img
+                            src="./resources/efcore.png"
+                            alt="entity framework"
+                        />
+                    </div>
                     <div>
                         <h3 class="skill-title">Entity Framework</h3>
                     </div>
@@ -177,7 +173,7 @@
             <div class="experiences-info">
                 <div class="flex">
                     <div class="flex-card">
-                        <div>
+                        <div class="flex-title">
                             <i class="fa-solid fa-code"></i>
                             <h3 data-i18n="exp.tma.name">Holder</h3>
                         </div>
@@ -187,7 +183,7 @@
                     </div>
 
                     <div class="flex-card">
-                        <div>
+                        <div class="flex-title">
                             <i class="fa-solid fa-code"></i>
                             <h3 data-i18n="exp.idb.name">Holder</h3>
                         </div>
@@ -197,7 +193,7 @@
                     </div>
 
                     <div class="flex-card">
-                        <div>
+                        <div class="flex-title">
                             <i class="fa-solid fa-code"></i>
                             <h3 data-i18n="exp.squareOne.name">Holder</h3>
                         </div>
@@ -213,14 +209,27 @@
             <h2 class="section-title" data-i18n="nav.link.projects">
                 Projects
             </h2>
+            <h3 class="section-title" data-i18n="project.personal">Holder</h3>
             <div class="projects-info">
                 <div class="flex">
                     <div class="flex-card">
                         <div>
-                            <h3 data-i18n="project.myBlog.name">Holder</h3>
+                            <h3 class="title" data-i18n="project.myBlog.name">
+                                Holder
+                            </h3>
                         </div>
-                        <h4>5/2025 - 6/2025</h4>
-                        <h4 data-i18n="project.myBlog.description">Holder</h4>
+                        <div>
+                            <h4>5/2025 - 6/2025</h4>
+                            <h4 data-i18n="project.myBlog.description">
+                                Holder
+                            </h4>
+                        </div>
+                        <div class="project-tech">
+                            <h4>Tech:</h4>
+                            <h4 data-i18n="project.myBlog.technologies">
+                                Holder
+                            </h4>
+                        </div>
                         <div class="social-links">
                             <a
                                 target="_blank"
@@ -232,10 +241,22 @@
 
                     <div class="flex-card">
                         <div>
-                            <h3 data-i18n="project.youShop.name">Holder</h3>
+                            <h3 class="title" data-i18n="project.youShop.name">
+                                Holder
+                            </h3>
                         </div>
-                        <h4>12/2024 - 4/2025</h4>
-                        <h4 data-i18n="project.myBlog.description">Holder</h4>
+                        <div>
+                            <h4>12/2024 - 4/2025</h4>
+                            <h4 data-i18n="project.myBlog.description">
+                                Holder
+                            </h4>
+                        </div>
+                        <div class="project-tech">
+                            <h4>Tech:</h4>
+                            <h4 data-i18n="project.youShop.technologies">
+                                Holder
+                            </h4>
+                        </div>
                         <div class="social-links">
                             <a
                                 target="_blank"

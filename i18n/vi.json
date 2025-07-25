@@ -39,14 +39,18 @@
         }
     },
     "project": {
+        "personal": "Cá nhân",
+        "work": "Công việc",
         "myBlog": {
             "name": "My Blog",
-            "description": "Phát triển một API web dạng RESTful cho phép người dùng đăng ký, xác thực, đăng tải bài viết với văn bản định dạng phong phú và hình ảnh, chỉnh sửa hoặc xóa nội dung của họ, và phân loại bài viết theo thẻ hoặc chủ đề. Bao gồm cả chức năng quản lý hồ sơ người dùng và kiểm duyệt bởi quản trị viên."
+            "description": "Phát triển một API web dạng RESTful cho phép người dùng đăng ký, xác thực, đăng tải bài viết với văn bản định dạng phong phú và hình ảnh, chỉnh sửa hoặc xóa nội dung của họ, và phân loại bài viết theo thẻ hoặc chủ đề. Bao gồm cả chức năng quản lý hồ sơ người dùng và kiểm duyệt bởi quản trị viên.",
+            "technologies": "ASP.NET Framework, C#, Redis, RabbitMQ, Docker"
         },
 
         "youShop": {
             "name": "You Shop",
-            "description": "Một nền tảng thương mại điện tử được thiết kế dành cho các doanh nghiệp nhỏ đến vừa để trưng bày và bán sản phẩm trực tuyến. Bao gồm các tính năng như danh sách sản phẩm, giỏ hàng, thanh toán an toàn, theo dõi đơn hàng, đánh giá từ người dùng và bảng điều khiển quản trị để quản lý tồn kho và đơn hàng."
+            "description": "Một nền tảng thương mại điện tử được thiết kế dành cho các doanh nghiệp nhỏ đến vừa để trưng bày và bán sản phẩm trực tuyến. Bao gồm các tính năng như danh sách sản phẩm, giỏ hàng, thanh toán an toàn, theo dõi đơn hàng, đánh giá từ người dùng và bảng điều khiển quản trị để quản lý tồn kho và đơn hàng.",
+            "technologies": "Golang, Gin Framework, RabbitMQ, Docker"
         }
     },
     "tooltips": {

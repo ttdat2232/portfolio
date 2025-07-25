@@ -4,7 +4,7 @@
     --default-section-padding: 6rem 12%;
     --default-color: #fff;
     --default-gap: 3rem;
-    --global-item-size: 1.5rem;
+    --global-item-size: 1.2em;
     --primary-color: rgb(0, 162, 237);
     --secondary-color: rgb(59, 137, 255);
     --shadow-secondary-color: rgb(0, 102, 255);
@@ -29,7 +29,6 @@
     font-optical-sizing: auto;
     font-style: normal;
     text-decoration: none;
-    font-size: var(--default-font-size);
 }
 
 html {
@@ -335,7 +334,6 @@ section.experiences > .experiences-info > .flex > .flex-card > * {
 }
 .section-title {
     text-align: center;
-    font-size: var(--global-item-size);
     font-weight: 600;
     margin-bottom: var(--global-item-size);
 }
@@ -376,6 +374,26 @@ section.experiences > .experiences-info > .flex > .flex-card > * {
     justify-content: left;
     transition: var(--default-transition);
     margin: auto;
+    -webkit-transition: var(--default-transition);
+    -moz-transition: var(--default-transition);
+    -ms-transition: var(--default-transition);
+    -o-transition: var(--default-transition);
+}
+
+.flex-card div {
+    margin-bottom: 0.5em;
+}
+
+.flex-card .flex-title > * {
+    display: inline-block;
+}
+
+.flex-card .title {
+    color: rgb(59, 137, 255);
+}
+.flex-card .project-tech > * {
+    display: inline-block;
+    color: rgb(59, 137, 255);
 }
 
 .flex-card h2 {
@@ -386,7 +404,7 @@ section.experiences > .experiences-info > .flex > .flex-card > * {
 .flex-card i {
     margin-bottom: 0;
     vertical-align: middle;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .flex-card.skill {
@@ -453,6 +471,14 @@ section.experiences > .experiences-info > .flex > .flex-card > * {
     color: #ff6600;
     box-shadow: #ff6600 3px 3px 0.7em 0px inset,
         #ff6600 -3px -3px 0.7em 1px inset;
+    background: none;
+}
+
+.flex-card.skill.ef:hover {
+    border: none;
+    color: #bec6e0;
+    box-shadow: #bec6e0 3px 3px 0.7em 0px inset,
+        #bec6e0 -3px -3px 0.7em 1px inset;
     background: none;
 }
 
@@ -604,7 +630,6 @@ section.experiences > .experiences-info > .flex > .flex-card > * {
     .social-links i {
         width: 2.5rem;
         height: 2.5rem;
-        font-size: 1.5rem;
     }
     .about .image {
         width: 80%;
