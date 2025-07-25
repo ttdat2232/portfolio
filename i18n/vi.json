@@ -54,15 +54,15 @@
         },
         "sportFeeds": {
             "name": "Sport Feeds",
-            "description": "Developed a social media platform for sports news. Allow users to reach out new information of sports, create and manage their articles, interact with other people via chat or comment system...",
+            "description": "Phát triển một nền tảng mạng xã hội dành cho tin tức thể thao. Cho phép người dùng tiếp cận thông tin thể thao mới, tạo và quản lý bài viết của họ, tương tác với người khác thông qua hệ thống trò chuyện hoặc bình luận...",
             "technologies": "ASP.NET Framework, C#, Redis, RabbitMQ, Docker",
-            "roles": ".NET Developer"
+            "roles": "Lập trình viên .NET"
         },
         "financialReport": {
-            "name": "Financial Reporting System",
-            "description": "A service that automatically generates financial reports for users at specified time intervals. It helps users track, analyze, and manage their financial data efficiently.",
+            "name": "Hệ thống báo cáo tài chính",
+            "description": "Dịch vụ tự động tạo báo cáo tài chính cho người dùng theo các khoảng thời gian đã định. Hỗ trợ người dùng theo dõi, phân tích và quản lý dữ liệu tài chính một cách hiệu quả.",
             "technologies": "ASP.NET Framework, C#",
-            "roles": ".NET Developer"
+            "roles": "Lập trình viên .NET"
         }
     },
     "tooltips": {

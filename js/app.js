@@ -35,6 +35,7 @@ class Translator {
     }
 
     async load(lang = null) {
+        showSpinner();
         if (this._loadAttempts === 3) {
             throw Error("couldn't load language file");
         }
@@ -51,6 +52,7 @@ class Translator {
                 element.innerHTML = this.getContent(keys);
                 this._loadAttempts = 0;
             });
+            hideSpinner();
             return;
         } catch (e) {
             console.error(e);
@@ -65,6 +67,7 @@ class Translator {
                 element.innerHTML = this.getContent(keys);
                 this._loadAttempts = 0;
             });
+            hideSpinner();
             return;
         } catch (e) {
             console.log(e);
@@ -82,6 +85,31 @@ class Translator {
 
 const translator = new Translator();
 
+setupPage();
+
+async function setupPage() {
+    let defaultLang = document.querySelector(".language");
+    selectedItemEle.innerHTML = defaultLang.innerHTML;
+    await translator.load(defaultLang.dataset.lang);
+    toastr.options.showDuration = true;
+    toastr.options.closeDuration = 1000;
+    toastr.options.closeEasing = "swing";
+}
+
+function showSpinner() {
+    let spinnerOverlay = document.createElement("div");
+    spinnerOverlay.classList.add("spinner-overlay");
+    spinnerOverlay.setAttribute("id", "spinner-overlay");
+    let spinner = document.createElement("div");
+    spinner.classList.add("spinner");
+    spinner.setAttribute("id", "spinner");
+    spinnerOverlay.appendChild(spinner);
+    document.body.appendChild(spinnerOverlay);
+}
+
+function hideSpinner() {
+    document.getElementById("spinner-overlay").remove();
+}
 function closeNavbar() {
     if (isNavOpen) {
         const navbar = document.querySelector(".dropdown");
@@ -95,6 +123,14 @@ function showNavbar() {
         navbar.style.transform = "translateY(0px)";
     }
     isNavOpen = true;
+}
+
+function hideLangauge() {
+    isLanguageSelectSectionShow = false;
+    document.querySelectorAll(".language").forEach((ele) => {
+        ele.style.opacity = 0;
+        ele.style.transform = "translateX(-5vw)";
+    });
 }
 
 Array.from(navLinkContainerElements).forEach((element) => {
@@ -150,14 +186,6 @@ document.querySelectorAll(".language").forEach((ele) => {
     });
 });
 
-function hideLangauge() {
-    isLanguageSelectSectionShow = false;
-    document.querySelectorAll(".language").forEach((ele) => {
-        ele.style.opacity = 0;
-        ele.style.transform = "translateX(-5vw)";
-    });
-}
-
 document.addEventListener("DOMContentLoaded", () => {
     const tooltip = document.createElement("div");
     tooltip.classList.add("tooltip");
@@ -192,14 +220,3 @@ document.querySelector("#email-logo").addEventListener("click", (e) => {
         clickCount = 0;
     }, 400);
 });
-
-async function setupPage() {
-    let defaultLang = document.querySelector(".language");
-    selectedItemEle.innerHTML = defaultLang.innerHTML;
-    await translator.load(defaultLang.dataset.lang);
-    toastr.options.showDuration = true;
-    toastr.options.closeDuration = 1000;
-    toastr.options.closeEasing = "swing";
-}
-
-setupPage();
