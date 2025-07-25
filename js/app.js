@@ -1,11 +1,13 @@
 let isNavOpen = false;
-let navLinkContainerElements = document.querySelectorAll("div.links");
-let downloadBtn = document.getElementById("download-cv");
-let selectedItemEle = document.querySelector(".selected-item");
 let clickCount = 0;
 let timeout = null;
 let isLanguageSelectSectionShow = false;
 
+let navLinkContainerElements = document.querySelectorAll("div.links");
+let downloadBtn = document.getElementById("download-cv");
+let selectedItemEle = document.querySelector(".selected-item");
+let goTopButton = document.getElementById("goTopBtn");
+goTopButton.style.opacity = 1;
 class Translator {
     constructor() {
         this._loadAttempts = 0;
@@ -133,6 +135,11 @@ function hideLangauge() {
     });
 }
 
+function backToTop() {
+    document.body.scrollTop = 0; // safari
+    document.documentElement.scrollTop = 0; // other
+}
+
 Array.from(navLinkContainerElements).forEach((element) => {
     element.addEventListener(
         "click",
@@ -220,3 +227,14 @@ document.querySelector("#email-logo").addEventListener("click", (e) => {
         clickCount = 0;
     }, 400);
 });
+
+window.onscroll = (e) => {
+    if (
+        document.body.scrollTop > 20 ||
+        document.documentElement.scrollTop > 20
+    ) {
+        goTopButton.style.opacity = 1;
+    } else {
+        goTopButton.style.opacity = 0;
+    }
+};

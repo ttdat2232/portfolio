@@ -639,6 +639,35 @@ section.experiences > .experiences-info > .flex > .flex-card > * {
     justify-content: center;
 }
 
+.goTopBtn {
+    z-index: 9998;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 10px;
+    right: 20px;
+    cursor: pointer;
+    height: 65px;
+    width: 65px;
+    outline: none;
+    box-shadow: rgb(72, 71, 137) 1.5px 1.5px 3px 0px inset,
+        rgb(59, 137, 255) -1.5px -1.5px 3px 0.5px inset;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.goTopBtn p {
+    text-align: center;
+}
+
+.goTopBtn:hover {
+    box-shadow: rgb(207, 226, 255) 3px 3px 1em 0px inset,
+        rgb(209, 228, 255) -3px -3px 1.1em 1px inset;
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -725,6 +754,9 @@ section.experiences > .experiences-info > .flex > .flex-card > * {
             rgb(59, 137, 255) -1.5px -1.5px 3px 0.5px inset;
     }
 
+    .legend-container {
+        padding: 50px;
+    }
     .legend-container .flex-card {
         height: initial;
     }
@@ -734,6 +766,9 @@ section.experiences > .experiences-info > .flex > .flex-card > * {
     }
     .experiences-info {
         flex-direction: column;
+    }
+    .goTopBtn {
+        background-color: #161618;
     }
 
     section.experiences {

@@ -1,4 +1,5 @@
 {
+    "top": "Top",
     "greeting": {
         "name": "Hi, my name is <span>Truong Tien Dat</span>",
         "job": "I'm a <span>Software Developer</span>",
