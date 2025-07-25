@@ -51,6 +51,18 @@
             "name": "You Shop",
             "description": "Một nền tảng thương mại điện tử được thiết kế dành cho các doanh nghiệp nhỏ đến vừa để trưng bày và bán sản phẩm trực tuyến. Bao gồm các tính năng như danh sách sản phẩm, giỏ hàng, thanh toán an toàn, theo dõi đơn hàng, đánh giá từ người dùng và bảng điều khiển quản trị để quản lý tồn kho và đơn hàng.",
             "technologies": "Golang, Gin Framework, RabbitMQ, Docker"
+        },
+        "sportFeeds": {
+            "name": "Sport Feeds",
+            "description": "Developed a social media platform for sports news. Allow users to reach out new information of sports, create and manage their articles, interact with other people via chat or comment system...",
+            "technologies": "ASP.NET Framework, C#, Redis, RabbitMQ, Docker",
+            "roles": ".NET Developer"
+        },
+        "financialReport": {
+            "name": "Financial Reporting System",
+            "description": "A service that automatically generates financial reports for users at specified time intervals. It helps users track, analyze, and manage their financial data efficiently.",
+            "technologies": "ASP.NET Framework, C#",
+            "roles": ".NET Developer"
         }
     },
     "tooltips": {

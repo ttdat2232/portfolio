@@ -51,6 +51,18 @@
             "name": "You Shop",
             "description": "An e-commerce platform designed for small to mid-size businesses to showcase and sell products online. Features include product listings, shopping cart, secure checkout, order tracking, user reviews, and an admin dashboard for inventory and order management.",
             "technologies": "Golang, Gin Framework, RabbitMQ, Docker"
+        },
+        "sportFeeds": {
+            "name": "Sport Feeds",
+            "description": "Developed a social media platform for sports news. Allow users to reach out new information of sports, create and manage their articles, interact with other people via chat or comment system...",
+            "technologies": "ASP.NET Framework, C#, Redis, RabbitMQ, Docker",
+            "roles": ".NET Developer"
+        },
+        "financialReport": {
+            "name": "Financial Reporting System",
+            "description": "A service that automatically generates financial reports for users at specified time intervals. It helps users track, analyze, and manage their financial data efficiently.",
+            "technologies": "ASP.NET Framework, C#",
+            "roles": ".NET Developer"
         }
     },
     "tooltips": {
