@@ -8,6 +8,7 @@ export default defineConfig(({ mode }) => ({
         react(),
         // viteSingleFile()
     ],
+    base: "/portfolio",
     server: {
         host: "::",
         port: 8080,
